@@ -263,7 +263,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="bg-primary/5 rounded-3xl p-8 md:p-16 text-center"
           >
-            <Badge className="mb-4">Let's Connect</Badge>
+            <Badge className="mb-4">Let us Connect</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
            
 
