@@ -115,6 +115,7 @@ export default function Project() {
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Explore my portfolio of projects across web development, software engineering, and artificial intelligence.
         </p>
+         <p className="text-sm text-gray-500 text-center">Current tab: {activeTab}</p>
       </div>
 
       <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
