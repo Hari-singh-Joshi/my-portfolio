@@ -505,7 +505,7 @@ export default function AboutPage() {
                     <p className="text-gray-600">Joshiharisingh84@gmail.com</p>
                   </div>
                 </div>
-              </Card>kk
+              </Card>
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <div className="flex items-center gap-4">
                   <div className="bg-purple-100 p-3 rounded-full">
