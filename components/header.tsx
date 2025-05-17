@@ -172,7 +172,7 @@ export default function Header() {
                 <Laptop className="h-5 w-5" />
                 Services
               </Link>
-              <Link href="/projects" className="flex items-center gap-2 text-lg font-medium">
+              <Link href="/project" className="flex items-center gap-2 text-lg font-medium">
                 <Code className="h-5 w-5" />
                 Projects
               </Link>
