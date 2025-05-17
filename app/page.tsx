@@ -265,9 +265,7 @@ export default function Home() {
           >
             <Badge className="mb-4">Let's Connect</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-            <p>
-      I&apos;m currently available for freelance work. If you have a project that needs some creative touch, I&apos;d love to hear about it.
-      </p>
+           
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
