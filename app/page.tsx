@@ -41,11 +41,7 @@ export default function Home() {
   return (
     <div className="w-full transition-shadow">
       {/* Sticky Header */}
-      <div
-        className={`fixed top-0 z-50 w-full bg-background ${
-          scrolled ? "shadow-md" : ""
-        }`}
-      >
+      <div className={`fixed top-0 z-50 w-full bg-background ${scrolled ? "shadow-md" : ""}`}>
         <Header />
       </div>
 
@@ -70,12 +66,12 @@ export default function Home() {
                 I create beautiful, functional websites and applications that help businesses grow and succeed in the digital world.
               </p>
               <div className="flex gap-4 mt-2">
-                <Link href="/project" passHref>
-                  <Button size="lg">View My Work</Button>
-                </Link>
-                <Link href="/contact" passHref>
-                  <Button variant="outline" size="lg">Contact Me</Button>
-                </Link>
+                <Button asChild size="lg">
+                  <Link href="/project">View My Work</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/contact">Contact Me</Link>
+                </Button>
               </div>
               <div className="flex gap-4 mt-4">
                 <Link
@@ -139,7 +135,7 @@ export default function Home() {
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="text-center mb-16">
             <Badge className="mb-4">My Expertise</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Technologies</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills and Technologies</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               I have spent years honing my skills across various technologies to deliver exceptional digital experiences.
             </p>
@@ -238,14 +234,11 @@ export default function Home() {
                         <Badge key={i} variant="secondary">{tag}</Badge>
                       ))}
                     </div>
-                    <Link href={project.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                      <Button
-                        variant="outline"
-                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors w-full flex justify-center"
-                      >
+                    <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex justify-center">
+                      <Link href={project.url} target="_blank" rel="noopener noreferrer">
                         View Project <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </CardFooter>
                 </Card>
               </motion.div>
@@ -253,11 +246,11 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center mt-12">
-            <Link href="/project" passHref>
-              <Button size="lg">
+            <Button asChild size="lg">
+              <Link href="/project">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </section>
 
@@ -272,20 +265,21 @@ export default function Home() {
           >
             <Badge className="mb-4">Let's Connect</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-8">
-              I am currently available for freelance work. If you have a project that needs some creative touch, I would love to hear about it.
-            </p>
+            <p>
+      I&apos;m currently available for freelance work. If you have a project that needs some creative touch, I&apos;d love to hear about it.
+      </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" passHref>
-                <Button size="lg">
+              <Button asChild size="lg">
+                <Link href="/contact">
                   Get in Touch <Mail className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/services" passHref>
-                <Button variant="outline" size="lg">
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/services">
                   View My Services <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </section>
