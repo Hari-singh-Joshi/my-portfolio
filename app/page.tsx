@@ -23,7 +23,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/80">
+    <div className={`fixed top-0 w-full transition-shadow ${scrolled ? "shadow-md" : ""}`}>
       {/* Header */}
       <Header />
 
@@ -39,7 +39,7 @@ export default function Home() {
             >
               <Badge className="w-fit">Available for Freelance</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                Hi, I'm <span className="text-primary">Hari Singh Joshi</span>
+                Hi, I am <span className="text-primary">Hari Singh Joshi</span>
               </h1>
               <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground">
                 Full-Stack Developer & UI/UX Designer
@@ -116,7 +116,7 @@ export default function Home() {
             <Badge className="mb-4">My Expertise</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Technologies</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I've spent years honing my skills across various technologies to deliver exceptional digital experiences.
+              I have spent years honing my skills across various technologies to deliver exceptional digital experiences.
             </p>
           </div>
 
@@ -253,7 +253,7 @@ export default function Home() {
             <Badge className="mb-4">Let&apos;s Connect</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-muted-foreground max-w-md mx-auto mb-8">
-              I'm currently available for freelance work. If you have a project that needs some creative touch, I'd love
+              I am currently available for freelance work. If you have a project that needs some creative touch, I would love
               to hear about it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
