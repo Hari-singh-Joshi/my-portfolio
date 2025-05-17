@@ -153,13 +153,13 @@ export default function AboutPage() {
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col">
                   <h3 className="text-xl font-bold">Bachelor of Technology in Computer Science</h3>
-                  <p className="text-gray-600">Tula's Institute, Dehradun</p>
+                  <p className="text-gray-600">Tulas Institute, Dehradun</p>
                   <p className="mt-2">Aggregate Percentage: 82%</p>
                   <p className="text-gray-500">Graduating in 2025</p>
                   <div className="mt-4">
                     <Image
                       src={tulasImage}
-                      alt="Tula's Institute"
+                      alt="Tulas Institute"
                       width={400}
                       height={200}
                       className="rounded-lg"
