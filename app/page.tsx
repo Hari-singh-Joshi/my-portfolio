@@ -1,14 +1,30 @@
 "use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight, Code, Laptop, Palette, Mail, Github, Linkedin, Twitter } from "lucide-react"
+import {
+  ArrowRight,
+  Code,
+  Laptop,
+  Palette,
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export default function Home() {
@@ -23,9 +39,15 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={`fixed top-0 w-full transition-shadow ${scrolled ? "shadow-md" : ""}`}>
-      {/* Header */}
-      <Header />
+    <div className="w-full transition-shadow">
+      {/* Sticky Header */}
+      <div
+        className={`fixed top-0 z-50 w-full bg-background ${
+          scrolled ? "shadow-md" : ""
+        }`}
+      >
+        <Header />
+      </div>
 
       <main className="pt-24">
         {/* Hero Section */}
@@ -45,17 +67,14 @@ export default function Home() {
                 Full-Stack Developer & UI/UX Designer
               </h2>
               <p className="text-lg text-muted-foreground max-w-md">
-                I create beautiful, functional websites and applications that help businesses grow and succeed in the
-                digital world.
+                I create beautiful, functional websites and applications that help businesses grow and succeed in the digital world.
               </p>
               <div className="flex gap-4 mt-2">
-                <Link href="/project">
+                <Link href="/project" passHref>
                   <Button size="lg">View My Work</Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="outline" size="lg">
-                    Contact Me
-                  </Button>
+                <Link href="/contact" passHref>
+                  <Button variant="outline" size="lg">Contact Me</Button>
                 </Link>
               </div>
               <div className="flex gap-4 mt-4">
@@ -63,33 +82,39 @@ export default function Home() {
                   href="https://github.com/Hari-singh-Joshi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="GitHub"
                 >
-                  <Github className="h-6 w-6" />
+                  <Github className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/hari-singh-joshi-4499b326b/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-6 w-6" />
+                  <Linkedin className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
                 </Link>
                 <Link
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Twitter"
                 >
-                  <Twitter className="h-6 w-6" />
+                  <Twitter className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
                 </Link>
               </div>
             </motion.div>
-            <motion.div className="relative">
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
               <div className="relative aspect-square max-w-md mx-auto overflow-hidden rounded-full border-8 border-background shadow-xl">
                 <Image
-                  src="/images/bg_1.png" // Your profile image in public/images/
-                  alt="Hari Singh Joshi"
+                  src="/images/bg_1.png"
+                  alt="Hari Singh Joshi Profile"
                   width={500}
                   height={500}
                   className="object-cover"
@@ -122,22 +147,14 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              { name: "MYSQL", icon: <Code className="h-8 w-8" />, color: "bg-blue-500/10 text-blue-500" },
-              { name: "Next.js", icon: <Code className="h-8 w-8" />, color: "bg-black/10" },
-              { name: "JavaScript and Python", icon: <Code className="h-8 w-8" />, color: "bg-blue-600/10 text-blue-600" },
-              {
-                name: "UI/UX Design",
-                icon: <Palette className="h-8 w-8" />,
-                color: "bg-purple-500/10 text-purple-500",
-              },
-              { name: "Django", icon: <Code className="h-8 w-8" />, color: "bg-green-500/10 text-green-500" },
-              { name: "Tailwind CSS", icon: <Palette className="h-8 w-8" />, color: "bg-cyan-500/10 text-cyan-500" },
-              {
-                name: "Responsive Design",
-                icon: <Laptop className="h-8 w-8" />,
-                color: "bg-orange-500/10 text-orange-500",
-              },
-              { name: "API Integration", icon: <Code className="h-8 w-8" />, color: "bg-red-500/10 text-red-500" },
+              { name: "MYSQL", icon: Code, color: "bg-blue-500/10 text-blue-500" },
+              { name: "Next.js", icon: Code, color: "bg-black/10 text-black" },
+              { name: "JavaScript and Python", icon: Code, color: "bg-blue-600/10 text-blue-600" },
+              { name: "UI/UX Design", icon: Palette, color: "bg-purple-500/10 text-purple-500" },
+              { name: "Django", icon: Code, color: "bg-green-500/10 text-green-500" },
+              { name: "Tailwind CSS", icon: Palette, color: "bg-cyan-500/10 text-cyan-500" },
+              { name: "Responsive Design", icon: Laptop, color: "bg-orange-500/10 text-orange-500" },
+              { name: "API Integration", icon: Code, color: "bg-red-500/10 text-red-500" },
             ].map((skill, index) => (
               <motion.div
                 key={index}
@@ -148,7 +165,9 @@ export default function Home() {
               >
                 <Card className="h-full hover:shadow-md transition-shadow">
                   <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-                    <div className={`rounded-full p-4 mb-4 ${skill.color}`}>{skill.icon}</div>
+                    <div className={`rounded-full p-4 mb-4 ${skill.color}`}>
+                      <skill.icon className="h-8 w-8" />
+                    </div>
                     <h3 className="font-medium">{skill.name}</h3>
                   </CardContent>
                 </Card>
@@ -157,7 +176,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Projects */}
+        {/* Projects Section */}
         <section className="container mx-auto px-4 py-16 md:py-24 bg-muted/30 rounded-3xl">
           <div className="text-center mb-16">
             <Badge className="mb-4">Portfolio</Badge>
@@ -174,7 +193,7 @@ export default function Home() {
                 description:
                   "A full-featured online store with payment processing and inventory management and early plant disease detection and solution system.",
                 tags: ["Material Design", "Django", "Sqlite"],
-                image: "/images/agriculture.png", // Make sure this image exists
+                image: "/images/agriculture.png",
                 url: "https://github.com/Hari-singh-Joshi/Plant-disease-identification.git",
               },
               {
@@ -193,11 +212,16 @@ export default function Home() {
                 url: "https://github.com/Hari-singh-Joshi/harghar_tution_app.git",
               },
             ].map((project, index) => (
-              <motion.div key={index}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
                 <Card className="overflow-hidden h-full hover:shadow-lg transition-all group">
                   <div className="aspect-video overflow-hidden">
                     <Image
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image}
                       alt={project.title}
                       width={500}
                       height={300}
@@ -211,13 +235,9 @@ export default function Home() {
                   <CardFooter className="flex flex-col items-start gap-4">
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, i) => (
-                        <Badge key={i} variant="secondary">
-                          {tag}
-                        </Badge>
+                        <Badge key={i} variant="secondary">{tag}</Badge>
                       ))}
                     </div>
-
-                    {/* Updated Button and Link usage: wrap Button inside Link for Next.js */}
                     <Link href={project.url} target="_blank" rel="noopener noreferrer" className="w-full">
                       <Button
                         variant="outline"
@@ -233,7 +253,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center mt-12">
-            <Link href="/project">
+            <Link href="/project" passHref>
               <Button size="lg">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -241,7 +261,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact CTA */}
+        {/* Contact Section */}
         <section className="container mx-auto px-4 py-16 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,19 +270,18 @@ export default function Home() {
             viewport={{ once: true }}
             className="bg-primary/5 rounded-3xl p-8 md:p-16 text-center"
           >
-            <Badge className="mb-4">Let&apos;s Connect</Badge>
+            <Badge className="mb-4">Let's Connect</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-muted-foreground max-w-md mx-auto mb-8">
-              I am currently available for freelance work. If you have a project that needs some creative touch, I would love
-              to hear about it.
+              I am currently available for freelance work. If you have a project that needs some creative touch, I would love to hear about it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/contact" passHref>
                 <Button size="lg">
                   Get in Touch <Mail className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/services">
+              <Link href="/services" passHref>
                 <Button variant="outline" size="lg">
                   View My Services <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -272,7 +291,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   )
