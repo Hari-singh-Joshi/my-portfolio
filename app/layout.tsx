@@ -23,15 +23,15 @@ export const metadata: Metadata = {
     'Portfolio',
     'Hackathon Winner'
   ],
-  authors: [{ name: 'Hari Singh Joshi', url: 'https://yourdomain.com' }],
+  authors: [{ name: 'Hari Singh Joshi', url: 'https://my-portfolio-i81d.vercel.app/' }],
   openGraph: {
     title: 'Hari Singh Joshi | Software Developer Portfolio',
     description: 'Explore projects by Hari Singh Joshi, a final-year B.Tech student at Tulas Institute with expertise in full-stack development and AI.',
-    url: 'https://yourdomain.com',
+    url: 'https://my-portfolio-i81d.vercel.app/',
     siteName: 'Hari Singh Joshi Portfolio',
     images: [
       {
-        url: 'https://yourdomain.com/og-image.jpg', // replace with your image
+        url: 'https://my-portfolio-i81d.vercel.app//og-image.jpg', // replace with your image
         width: 1200,
         height: 630,
         alt: 'Hari Singh Joshi Portfolio Preview',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  metadataBase: new URL('https://yourdomain.com'),
+  metadataBase: new URL('https://my-portfolio-i81d.vercel.app/'),
 };
 
 
