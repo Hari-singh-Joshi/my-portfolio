@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'Hari Singh Joshi Portfolio',
     images: [
       {
-        url: 'https://portfolio-hari-singh.vercel.app//og-image.jpg', // replace with your image
+        url: 'https://portfolio-hari-singh.vercel.app/images/bg_1.png', // replace with your image
         width: 1200,
         height: 630,
         alt: 'Hari Singh Joshi Portfolio Preview',
