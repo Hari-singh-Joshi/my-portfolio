@@ -197,7 +197,7 @@ export default function Home() {
                 description: "A modern, responsive notes website for Uttarakhand Technical University.",
                 tags: ["BootStrap", "JavaScript", "Google Drive"],
                 image: "/images/notesfy.png",
-                url: "https://hari-singh-joshi.github.io/NotesFy/",
+                url: "https://notesfy.vercel.app/",
               },
               {
                 title: "Tuition Website HarGharPathShala",
